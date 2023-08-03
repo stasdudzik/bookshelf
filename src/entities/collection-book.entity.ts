@@ -16,7 +16,10 @@ export class CollectionBook {
   collection_id: number;
 
   @ManyToMany(() => Book, (book) => book.id)
-  book_id: number;
+  book_id: Book;
+
+  @ManyToMany(() => Book, (book) => book.id)
+  book: Book[];
 
   @Column()
   is_free: boolean;

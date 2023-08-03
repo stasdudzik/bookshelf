@@ -23,7 +23,6 @@ export class Book {
   @Column()
   ISBN: string;
 
-  // add column for image
   @Column()
   image: string;
 }
