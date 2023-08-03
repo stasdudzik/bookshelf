@@ -3,11 +3,10 @@ import {
   PrimaryGeneratedColumn,
   Column,
   ManyToOne,
-  ManyToMany,
-  JoinTable,
+  OneToMany,
 } from 'typeorm';
-import { BooksCollection } from './books-collection.entity';
-import { Friendship } from './friendship.entity';
+import { BooksCollection } from './books-collections.entity';
+import { Friendship } from './friendships.entity';
 
 @Entity()
 export class User {
@@ -26,7 +25,6 @@ export class User {
   @ManyToOne(() => BooksCollection, (booksCollection) => booksCollection.id)
   booksCollection: BooksCollection[];
 
-  @ManyToMany(() => Friendship, (friendship) => friendship.id)
-  @JoinTable()
+  @OneToMany(() => Friendship, (friendship) => friendship.id)
   friendship: Friendship[];
 }

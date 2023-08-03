@@ -5,8 +5,8 @@ import {
   ManyToOne,
   ManyToMany,
 } from 'typeorm';
-import { BooksCollection } from './books-collection.entity';
-import { Book } from './book.entity';
+import { BooksCollection } from './books-collections.entity';
+import { Book } from './books.entity';
 @Entity()
 export class CollectionBook {
   @PrimaryGeneratedColumn()
@@ -15,7 +15,7 @@ export class CollectionBook {
   @ManyToOne(() => BooksCollection, (booksCollection) => booksCollection.id)
   collection_id: number;
 
-  @ManyToMany(() => Book, (book) => book.id)
+  @ManyToOne(() => Book, (book) => book.id)
   book_id: Book;
 
   @ManyToMany(() => Book, (book) => book.id)

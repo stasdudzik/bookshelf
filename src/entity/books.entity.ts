@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { CollectionBook } from './collection-books.entity';
 
 @Entity()
 export class Book {
@@ -25,4 +26,7 @@ export class Book {
 
   @Column()
   image: string;
+
+  @OneToMany(() => CollectionBook, (collectionBook) => collectionBook.id)
+  collectionBook: CollectionBook[];
 }

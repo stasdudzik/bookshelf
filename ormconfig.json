@@ -5,6 +5,7 @@
   "username": "test",
   "password": "test",
   "database": "bookshelf_test",
-  "entities": ["dist/**/*.entity{.ts,.js}"],
-  "synchronize": true
+  "entities": ["src/entity/**/*.ts"],
+  "migrations": ["src/migration/**/*.ts"],
+  "synchronize": false
 }

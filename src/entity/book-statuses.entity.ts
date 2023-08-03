@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
-import { CollectionBook } from './collection-book.entity';
-import { User } from './user.entity';
+import { CollectionBook } from './collection-books.entity';
+import { User } from './users.entity';
 
 @Entity()
 export class BookStatus {
