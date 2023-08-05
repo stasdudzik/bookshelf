@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { UserController } from './user/user.controller';
+import { UserService } from './user/user.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { dataSourceOptions } from 'db/data-source';
 import { BookModule } from './book/book.module';
@@ -9,10 +9,19 @@ import { BooksCollectionModule } from './books-collection/books-collection.modul
 import { CollectionBookModule } from './collection-book/collection-book.module';
 import { FriendshipModule } from './friendship/friendship.module';
 import { BookStatusModule } from './book-status/book-status.module';
-
+import { AuthModule } from './auth/auth.module';
 @Module({
-  imports: [TypeOrmModule.forRoot(dataSourceOptions), BookModule, UserModule, BooksCollectionModule, CollectionBookModule, FriendshipModule, BookStatusModule],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    TypeOrmModule.forRoot(dataSourceOptions),
+    AuthModule,
+    BookModule,
+    UserModule,
+    BooksCollectionModule,
+    CollectionBookModule,
+    FriendshipModule,
+    BookStatusModule,
+  ],
+  controllers: [UserController],
+  providers: [UserService],
 })
 export class AppModule {}
