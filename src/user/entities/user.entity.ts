@@ -27,4 +27,7 @@ export class User {
 
   @OneToMany(() => Friendship, (friendship) => friendship.id)
   friendship: Friendship[];
+
+  @Column({ default: 'user' })
+  role: string;
 }
