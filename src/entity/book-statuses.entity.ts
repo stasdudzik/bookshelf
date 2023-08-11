@@ -2,7 +2,7 @@ import { Entity, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 import { CollectionBook } from './collection-books.entity';
 import { User } from './users.entity';
 
-@Entity()
+@Entity('book_statuses')
 export class BookStatus {
   @PrimaryGeneratedColumn()
   id: number;

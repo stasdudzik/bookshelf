@@ -7,7 +7,7 @@ import {
 } from 'typeorm';
 import { BooksCollection } from './books-collections.entity';
 import { Book } from './books.entity';
-@Entity()
+@Entity('collection_books')
 export class CollectionBook {
   @PrimaryGeneratedColumn()
   id: number;
