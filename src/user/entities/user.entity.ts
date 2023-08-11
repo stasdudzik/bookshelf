@@ -16,11 +16,17 @@ export class User {
   @Column()
   username: string;
 
+  @Column()
+  firstName: string;
+
+  @Column()
+  lastName: string;
+
   @Column({ unique: true })
   email: string;
 
   @Column()
-  password: string;
+  hash: string;
 
   @ManyToOne(() => BooksCollection, (booksCollection) => booksCollection.id)
   booksCollection: BooksCollection[];
