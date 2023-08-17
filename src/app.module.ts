@@ -10,6 +10,7 @@ import { CollectionBookModule } from './collection-book/collection-book.module';
 import { FriendshipModule } from './friendship/friendship.module';
 import { BookStatusModule } from './book-status/book-status.module';
 import { AuthModule } from './auth/auth.module';
+import { DatabaseModule } from './database/database.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot(dataSourceOptions),
@@ -20,6 +21,7 @@ import { AuthModule } from './auth/auth.module';
     CollectionBookModule,
     FriendshipModule,
     BookStatusModule,
+    DatabaseModule,
   ],
   controllers: [UserController],
   providers: [UserService],

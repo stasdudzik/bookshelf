@@ -4,9 +4,9 @@ export const dataSourceOptions: DataSourceOptions = {
   type: 'postgres',
   host: 'localhost',
   port: 5432,
-  username: 'test',
-  password: 'test',
-  database: 'bookshelf_test',
+  username: 'postgres',
+  password: 'postgres',
+  database: 'bookshelf',
   entities: ['dist/**/*.entity.js'],
   migrations: ['dist/db/migrations/*.js'],
 };
