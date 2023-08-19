@@ -11,8 +11,10 @@ import { FriendshipModule } from './friendship/friendship.module';
 import { BookStatusModule } from './book-status/book-status.module';
 import { AuthModule } from './auth/auth.module';
 import { DatabaseModule } from './database/database.module';
+import { ConfigModule } from '@nestjs/config';
 @Module({
   imports: [
+    ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot(dataSourceOptions),
     AuthModule,
     BookModule,
