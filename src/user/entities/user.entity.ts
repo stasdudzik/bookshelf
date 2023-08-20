@@ -7,6 +7,7 @@ import {
 } from 'typeorm';
 import { BooksCollection } from '../../entity/books-collections.entity';
 import { Friendship } from '../../entity/friendships.entity';
+import PrivateFile from 'src/files/entities/file.entity';
 
 @Entity('users')
 export class User {
@@ -33,6 +34,9 @@ export class User {
 
   @OneToMany(() => Friendship, (friendship) => friendship.id)
   friendship: Friendship[];
+
+  @OneToMany(() => PrivateFile, (file: PrivateFile) => file.owner)
+  public files: PrivateFile[];
 
   @Column({ default: 'user' })
   role: string;
