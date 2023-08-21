@@ -12,6 +12,7 @@ import { BookStatusModule } from './book-status/book-status.module';
 import { AuthModule } from './auth/auth.module';
 import { DatabaseModule } from './database/database.module';
 import { ConfigModule } from '@nestjs/config';
+import { UploadModule } from './upload/upload.module';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
@@ -24,6 +25,7 @@ import { ConfigModule } from '@nestjs/config';
     FriendshipModule,
     BookStatusModule,
     DatabaseModule,
+    UploadModule,
   ],
   controllers: [UserController],
   providers: [UserService],
